@@ -1,11 +1,16 @@
 export default function ResultsGrid({ recommendations }) {
   if (recommendations.length === 0) {
-    return <div className="text-slate-500">Select seed songs and click recommend to see results.</div>
+    return (
+      <div className="text-center py-12 text-slate-500">
+        <div className="text-4xl mb-4">🎵</div>
+        <p>Select seed songs and click recommend to see results.</p>
+      </div>
+    )
   }
 
   return (
     <div>
-      <h2 className="text-xl font-semibold mb-3">Recommendations</h2>
+      <h2 className="text-xl font-semibold mb-3">Recommendations ({recommendations.length})</h2>
       <div className="grid gap-3">
         {recommendations.map((song) => (
           <div key={song.id} className="p-4 bg-slate-900 rounded-lg border border-slate-800">
