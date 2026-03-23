@@ -1,5 +1,8 @@
-"""Train ALS model and save normalized song embeddings."""
+"""Train ALS model and save normalized song embeddings.
 
+This module uses the implicit library to train an Alternating Least Squares
+model on user-song interaction data, producing embeddings for recommendation.
+"""
 from pathlib import Path
 
 import numpy as np
@@ -14,10 +17,12 @@ EMBEDDINGS_DIR = DATA_DIR / "embeddings"
 
 
 def load_interactions():
+    """Load user-song interaction matrix from processed data."""
     raise NotImplementedError("TODO: implement interaction loading")
 
 
 def train():
+    """Train ALS model and save normalized song embeddings."""
     raise NotImplementedError("TODO: implement ALS training")
 
 
