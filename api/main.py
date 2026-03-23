@@ -1,5 +1,4 @@
 """FastAPI entry point for the music recommendation engine."""
-
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI
@@ -14,7 +13,12 @@ async def lifespan(app: FastAPI):
     yield
 
 
-app = FastAPI(title="Music Recommender API", lifespan=lifespan)
+app = FastAPI(
+    title="Music Recommender API",
+    description="API for music recommendations using collaborative filtering and cosine similarity.",
+    version="0.1.0",
+    lifespan=lifespan,
+)
 
 app.add_middleware(
     CORSMiddleware,
