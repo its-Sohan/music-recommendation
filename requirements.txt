@@ -1,0 +1,24 @@
+# API
+fastapi>=0.139.0
+uvicorn[standard]>=0.49.0
+pydantic>=2.13.4
+python-multipart>=0.0.32
+
+# ML / Recommendation
+implicit>=0.7.3
+faiss-cpu>=1.14.3
+numpy>=2.5.0
+scipy>=1.18.0
+scikit-learn>=1.9.0
+
+# Data
+pandas>=3.0.3
+pyarrow>=24.0.0
+
+# Utils
+python-dotenv>=1.2.2
+httpx>=0.28.1
+
+# Dev / Testing
+pytest>=9.1.1
+pytest-asyncio>=1.4.0
