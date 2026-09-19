@@ -1,10 +1,16 @@
 const API_BASE = '/api'
 
+let searchController = null
+
 export async function searchSongs(query) {
+  if (searchController) searchController.abort()
+  searchController = new AbortController()
+  
   const res = await fetch(`${API_BASE}/search`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ query }),
+    signal: searchController.signal,
   })
   if (!res.ok) throw new Error('Search failed')
   return res.json()
