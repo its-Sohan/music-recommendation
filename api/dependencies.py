@@ -1,5 +1,8 @@
-"""Shared dependencies for the FastAPI app."""
+"""Shared dependencies for the FastAPI app.
 
+This module defines common file paths and configuration constants
+used across the API layer for loading models and data.
+"""
 from pathlib import Path
 
 # Paths
