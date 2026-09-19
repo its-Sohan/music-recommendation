@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./data:/app/data
+      - ./model:/app/model
+    environment:
+      - DEBUG=true
+      - API_HOST=0.0.0.0
+      - API_PORT=8000
+  ui:
+    build:
+      context: ./ui
+      dockerfile: Dockerfile
+    ports:
+      - "5173:5173"
+    depends_on:
+      - api
+    environment:
+      - VITE_API_URL=http://api:8000
