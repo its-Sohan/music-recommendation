@@ -1,0 +1,11 @@
+# Default owners for everything
+* @its-Sohan
+
+# API code
+/api/ @its-Sohan
+
+# Model code
+/model/ @its-Sohan
+
+# UI code
+/ui/ @its-Sohan
