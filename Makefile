@@ -1,4 +1,4 @@
-.PHONY: api ui install test clean
+.PHONY: api ui install test clean lint format
 
 export PATH := $(shell pwd)/.node/bin:$(PATH)
 
@@ -15,6 +15,14 @@ ui:
 
 test:
 	.venv/bin/pytest
+
+lint:
+	.venv/bin/flake8 api/ model/ tests/
+	cd ui && npm run lint
+
+format:
+	.venv/bin/black api/ model/ tests/
+	cd ui && npx prettier --write "src/**/*.{js,jsx}"
 
 clean:
 	rm -rf .venv .node ui/node_modules ui/dist
