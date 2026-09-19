@@ -1,5 +1,11 @@
 # Music Recommendation Engine
 
+![Python](https://img.shields.io/badge/Python-3.10+-blue?logo=python)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.139+-009688?logo=fastapi)
+![React](https://img.shields.io/badge/React-18+-61DAFB?logo=react)
+![Tailwind](https://img.shields.io/badge/Tailwind-3.4+-06B6D4?logo=tailwindcss)
+![License](https://img.shields.io/badge/License-MIT-green)
+
 A web app where users search for songs, pick a few seed tracks, and get recommendations powered by collaborative filtering + cosine similarity.
 
 ## Tech Stack
