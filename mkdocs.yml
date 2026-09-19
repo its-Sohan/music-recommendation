@@ -1,0 +1,16 @@
+site_name: Music Recommendation Engine
+site_description: Documentation for the music recommendation project
+theme:
+  name: material
+  palette:
+    primary: blue
+    accent: blue
+
+nav:
+  - Home: index.md
+  - Setup: SETUP.md
+  - API: API.md
+  - Architecture: ARCHITECTURE.md
+  - Contributing: CONTRIBUTING.md
+  - FAQ: FAQ.md
+  - Changelog: CHANGELOG.md
