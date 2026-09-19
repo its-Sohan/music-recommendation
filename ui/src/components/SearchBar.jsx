@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import { searchSongs } from '../services/api'
 
 export default function SearchBar({ onSelect }) {
@@ -6,9 +6,7 @@ export default function SearchBar({ onSelect }) {
   const [results, setResults] = useState([])
   const [loading, setLoading] = useState(false)
 
-  const handleSearch = async (e) => {
-    const value = e.target.value
-    setQuery(value)
+  const handleSearch = useCallback(async (value) => {
     if (value.length < 2) {
       setResults([])
       return
@@ -18,11 +16,18 @@ export default function SearchBar({ onSelect }) {
       const data = await searchSongs(value)
       setResults(data.results || [])
     } catch (err) {
-      console.error(err)
+      console.error('Search error:', err)
       setResults([])
     } finally {
       setLoading(false)
     }
+  }, [])
+
+  const handleChange = (e) => {
+    const value = e.target.value
+    setQuery(value)
+    clearTimeout(window.__searchTimeout)
+    window.__searchTimeout = setTimeout(() => handleSearch(value), 300)
   }
 
   return (
@@ -30,7 +35,7 @@ export default function SearchBar({ onSelect }) {
       <input
         type="text"
         value={query}
-        onChange={handleSearch}
+        onChange={handleChange}
         placeholder="Search for a song or artist..."
         className="w-full p-3 rounded-lg bg-slate-900 border border-slate-700 focus:outline-none focus:border-blue-500"
       />
