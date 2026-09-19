@@ -1,0 +1,15 @@
+.git
+.venv
+node_modules
+__pycache__
+*.pyc
+.env
+.vscode
+.idea
+*.log
+data/raw/*
+data/processed/*
+data/embeddings/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/embeddings/.gitkeep
